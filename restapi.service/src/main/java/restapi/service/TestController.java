@@ -59,9 +59,10 @@ public class TestController {
 	        String resultVal = jsonobj.toString();
 			return resultVal;
 			*/
-			List<TestModel> resultMapList = new ArrayList<TestModel>();
+			
+			//List<TestModel> resultMapList = new ArrayList<TestModel>();
 			TestModel resultMap = new TestModel();
-        		        
+    		/*        
 	        resultMap.Id = "1";
 	        resultMap.Name = "jwaminkim";
 	        resultMap.Nick = "kjm";
@@ -76,8 +77,8 @@ public class TestController {
 	        resultMap.Nick = "cj"; 
 	        
 	        resultMapList.add(resultMap);
-	        
-	        String resultVal = mapToJson(resultMapList);
+	        */
+	        String resultVal = mapToJson(resultMap);
 			//Map<String, Object> deResultMap = jsonToMap(resultVal);    
 			return resultVal;
 		}
@@ -104,11 +105,11 @@ public class TestController {
 		return testval;
 	}
 	
-	public String mapToJson(List<TestModel> resultMapList) throws Exception
+	public String mapToJson(TestModel resultMap) throws Exception
     {
         ObjectMapper mapper = new ObjectMapper();
         
-        return mapper.writeValueAsString(resultMapList);
+        return mapper.writeValueAsString(resultMap);
     }
 	
 	public Map<String, Object> jsonToMap(String json) throws Exception
